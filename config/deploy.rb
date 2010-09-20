@@ -9,7 +9,7 @@ set :deploy_to, "/var/www/#{application}"
 set :deploy_via, :remote_cache
 
 set :scm, :git
-set :repository, "git://github.com/andreaslyngstad/bryllup.git"
+set :repository, "git://github.com/pharosproduksjoner/bryllup.git"
 set :branch, "master"
 
 
@@ -17,6 +17,7 @@ namespace :deploy do
   desc "Symlink shared configs and folders on each release."
   task :symlink_shared do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"  
+    run "ln -nfs #{shared_path}/public/uploads #{release_path}/config/uploads"  
     
   end
   
