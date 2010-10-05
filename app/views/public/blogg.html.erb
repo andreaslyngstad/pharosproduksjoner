@@ -1,13 +1,25 @@
 <% @page_title = @current_action%>
 
-<div id="content_l">					
-	<%= render :partial => "shared/post"%>		
+<div id="content">
+ 
+    <div id="menu"> 
+    <ul><% for f in @pages do %>
+      <li><%= link_to(f.navlabel, view_page_path(f.name))%></li>
+      <%end%>
+        <li><%= link_to "<span>Blogg</span>", view_blogg_path %>
+   <%= render :partial => "shared/links" %> 
+   </li>
+      </ul>
+      
+    </div>
+    <div id="content_l">          
+  <%= render :partial => "shared/post"%>    
 </div>
+  </div> 
+   
 
-	<div id="content_r">	
-	<%= render :partial => "shared/links" %>
 
-</div>
+
 
 
 

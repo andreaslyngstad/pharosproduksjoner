@@ -11,7 +11,7 @@
 		<li><%= f.label :Ingress %></li>
 		<li><%= f.text_area(:lead, :cols => 61, :rows => 7, :style => "font-size: 1.5em")%></li>	
         <li><%= f.label :Innhold, h("Innhold. Hvis du vil legge inn kode bruk  <code:ruby> ..kode her.. </code>") %></li>
-   		<li><%= textile_editor 'post', 'content'%></li>	
+   		<li><%= f.text_area :content%></li>	
 		<li><label>&nbsp;</label><%= f.submit "Lagre",:class => 'submit' %></li>
         </ul>
  	
@@ -28,6 +28,6 @@
 		<li><%= f.select(:status, ['Kladd', 'Offentlig'])%></li>
 		
 	
-<%= textile_editor_initialize -%>
+
 <% end -%>
 </div>

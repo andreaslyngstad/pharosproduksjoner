@@ -1,12 +1,12 @@
 
 html,body {
-          background: #400000;
+          
           margin:0;
           padding:0;
           font-family:Verdana, Sans-serif;
           font-weight:1000;
-          height:100%;
-          letter-spacing:3px;
+          height:98%;
+          letter-spacing:0px;
           }
 h1       {text-decoration: none; 
           margin-top: 5; 
@@ -24,30 +24,40 @@ h2 a     {text-decoration:none;
           color:#000
           }
 a        {text-decoration:none;
-          color:#766498;}
+          color:#888;}
 a:hover   {color:#85a5f0}
 ul,ol     {padding:0px 0px 0px 30px;}
 
 
 
-#header    {border-bottom: 1px solid #766498; 
-            width: 100%; 
-            height:250px;
-            background: #401e6c;
-            }
-#header_wrapper { 
+#header    { background:#fff url( ../images/header_bg.png) no-repeat;
+            height: 135px;
+            width: 1030px; 
+          }
                 
-                height:251px; 
-                margin-left:30px;}
-#content   {min-height: 500px; height: auto!important;height: 100%;
-            margin-left:auto;
-            margin-right:auto;
-            width: 990px;
-                     }
+#header #logo {background: url( ../images/logo.png) no-repeat;
+              height: 100px;
+              width: 350px;
+              margin-right:20px;
+              float:right;
+          }
+#content_wrapper {position:relative; /* needed for footer positioning*/
+                  margin:0 auto; /* center, not in IE5 */
+                  width:1030px;
+                  height:auto !important; /* real browsers */
+                  height:100%; /* IE6: treaded as min-height*/
+                background: url( ../images/left_content.png) repeat-y;
+                  min-height:100%; /* real browsers */
+                  }
+#content   {}
+
 #content_wrapper ul li  {list-style:none; }
 #logged_in {padding:20px 20px 20px 20px;    
-            margin-top: 20px;
-            float: right;
+            color: #fff;
+            font-size: 10px;
+            position: fixed;
+            left:0px;
+            top:0px;
             background: rgba(50, 50, 50, 250.246094);
             text-align:center;
             }
@@ -59,13 +69,17 @@ ul,ol     {padding:0px 0px 0px 30px;}
             text-align:center;
             }
 
-#content_l  {letter-spacing:0px;
-             float: right;
-            margin-left: 20px;
-            width: 710px;
-            
+#content_l  {
+           
+            border-left:#ccc 1px solid;
+            margin-left: 255px;
+            margin-right:10px;
+            width: 690px;
+            padding: 3px 10px 100px 10px;
             }
 #content_l  a   {font-size: 1em;}
+
+
 
 #content_l img {
                 border: 1px solid rgb(128, 128, 128);
@@ -78,29 +92,42 @@ ul,ol     {padding:0px 0px 0px 30px;}
           padding: 20px 20px 1px;}
           
 #menu { 
+        
         float: left; 
-        width:255px;
+        width:254px;
         font-size:20px; 
         font-weight:100;
-        padding: 20px 0px 20px 0px;
+        padding-left:10px;
+        
         
           }
+.form_layout          {padding:0px 0px 20px 0px;}
+.form_layout li         {list-style:none;clear:both;padding-top:2px;}
+.form_layout li label     {list-style:none;width:120px;float:left;}
+.form_layout li input     {width:400px;float:left;padding:2px;border:1px solid #999;background:#fff;}
+.form_layout li select      {width:135px;float:left;padding:2px;border:1px solid #999;background:#fff;}
+.form_layout li textarea    {width:400px;float:left;padding:2px;border:1px solid #999;background:#fff;}
+.form_layout li .submit     {width:auto;cursor:pointer;margin-right:2px;}
 #menu ul {list-style: none; margin: 0;}
 #menu li {padding: 10px 10px 10px 10px;}  
 #menu ul li ul li  { font-size:17px; 
                      padding: 5px 5px 5px 0px;}    
-#menu {color: #9C850F;}
+#menu ul li ul li ul li { font-size:12px; 
+                     padding: 3px 3px 3px 0px;}    
+
 
 /* Footer styles */
-  #footer {
-    min-height:50px;height:auto!important;height:50px;
-    clear:both;
-    color: #766498;
+  #footer { 
+    position:absolute;
+    width:100%;
+    bottom:0px;
+    height:100px;
+    background:#fff url( ../images/footer_bg.png) no-repeat;
+  }
+  #footer p {
     font-size: 10px;
     line-height: 25px;
-  }
-  #footer p { 
+    margin: 0px;
+    padding: 50px;
     text-align: center
   }
-
-

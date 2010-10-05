@@ -3,4 +3,4 @@ tmp/**/*
 db/*.sqlite3
 config/database.yml
 test/
-vendor/plugins/selenium-on-rails/
+Thumbs.db

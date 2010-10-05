@@ -12,7 +12,7 @@ class PublicController < ApplicationController
     end
     @posts = Post.find(:all, :conditions => "status = 'Offentlig'", 
                                      :order => "created_at DESC", :limit => 3)
-    @pages = Page.all
+    @pages = Page.roots
   end
   
   def start
@@ -27,6 +27,7 @@ class PublicController < ApplicationController
   end
   
   def blogg
+    @pages = Page.roots
     @posts = Post.search(params[:search])
     @posts_til_liste = Post.eager_post
     respond_to do |format|
@@ -36,6 +37,7 @@ class PublicController < ApplicationController
   end
   
   def view_post
+    @pages = Page.roots
     @post = Post.find(params[:id], :include => [:author, :categories, :approved_comments])
     @posts_til_liste = Post.eager_post
     render(:template => 'shared/view_post')
@@ -66,6 +68,7 @@ class PublicController < ApplicationController
   end
   
    def category
+     @pages = Page.roots
      @posts_til_liste = Post.eager_post
     @posts = Post.find(:all, :include => [:author, :categories], 
     :conditions => ["status = 'Offentlig' AND categories.id = ?", params[:id]], 
